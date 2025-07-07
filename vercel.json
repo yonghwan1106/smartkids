@@ -14,13 +14,15 @@
       "src": "/assets/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      },
+      "dest": "/assets/$1"
     },
     {
       "src": "/(.*\\.(js|mjs|css|svg|png|jpg|jpeg|gif|ico|woff|woff2|ttf|eot))",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"
-      }
+      },
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
