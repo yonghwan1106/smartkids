@@ -17,9 +17,15 @@ export default defineConfig(({ mode }) => {
         postcss: './postcss.config.js',
       },
       build: {
+        outDir: 'dist',
+        assetsDir: 'assets',
         rollupOptions: {
-          input: {
-            main: path.resolve(__dirname, 'index.html')
+          input: path.resolve(__dirname, 'index.html'),
+          output: {
+            manualChunks: undefined,
+            entryFileNames: 'assets/[name]-[hash].js',
+            chunkFileNames: 'assets/[name]-[hash].js',
+            assetFileNames: 'assets/[name]-[hash].[ext]'
           }
         }
       }
